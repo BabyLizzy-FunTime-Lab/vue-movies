@@ -1,6 +1,8 @@
 <script>
+import getImages from "@/mixins/getImages";
 export default {
   name: "MovieItem",
+  mixins: [getImages],
   data() {
     return {
       posterSrc: null
@@ -15,9 +17,8 @@ export default {
     checkPoster() {
       console.log(this.imgUrl);
       if (this.imgUrl === 'N/A') {
-        // I don't understand why I couldn't use require here.
-        // require is undefined.
-        return '/images/no-image.jpg';
+        // If no poster is available we return a default img.
+        return this.getImgUrl('no-image.jpg');
       } else {
         return this.imgUrl;
       }

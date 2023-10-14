@@ -29,6 +29,7 @@ export default {
       <button @click="searchMovie(searchTitle)" class="btn btn-success">Search movies</button>
       <button class="btn btn-danger">Clear</button>
     </div>
+    <h4>Total hits: {{ store.getTotalSearchResults }}</h4>
     <ul class="list-group" v-if="store.getSearchResults && store.getSearchResults.length">
       <MovieItem
           v-for="movie of store.getSearchResults"
