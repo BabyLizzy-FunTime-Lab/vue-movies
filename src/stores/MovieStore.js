@@ -14,10 +14,10 @@ export const useMovieStore= defineStore('movies', {
         }
     },
     actions: {
-        searchMovie(movieTitle) {
+        searchMovie(movieTitle, pageNumber) {
             this.loadingStatus = 'loading';
             // Search movies by. It returns an array
-            let searchURL = baseDataURL + "type=movie&" + 's=' + movieTitle
+            let searchURL = baseDataURL + "type=movie&page=" + pageNumber + '&s=' + movieTitle
             axios.get(searchURL).then(result => {
                 this.loadingStatus = 'notLoading';
                 this.totalSearchResults = result.data.totalResults;
@@ -31,6 +31,11 @@ export const useMovieStore= defineStore('movies', {
                 this.searchResults = [];
                 this.errors = err;
             })
+        },
+        clearResults() {
+            this.totalSearchResults = "0";
+            this.searchResults = [];
+            this.errors = null;
         }
     },
     getters: {
