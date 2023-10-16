@@ -5,6 +5,10 @@ export default {
         getImgUrl(img) {
             console.log("Getting img: " + img);
             return new URL('../assets/images/' + img, import.meta.url).href;
+        },
+        getIconUrl(img) {
+            console.log("Getting icon: " + img);
+            return new URL('../assets/icons/' + img, import.meta.url).href;
         }
     }
 }

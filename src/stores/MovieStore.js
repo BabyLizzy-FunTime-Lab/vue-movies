@@ -8,8 +8,10 @@ export const useMovieStore= defineStore('movies', {
         return {
             loadingStatus: 'notLoading',
             searchResults: [],
-            totalSearchResults: "",
+            totalSearchResults: Number,
             movieDetails: [],
+            currentPage: Number,
+            currentSearch: String,
             errors: null
         }
     },
@@ -22,6 +24,8 @@ export const useMovieStore= defineStore('movies', {
                 this.loadingStatus = 'notLoading';
                 this.totalSearchResults = result.data.totalResults;
                 this.searchResults = result.data.Search;
+                this.currentPage = pageNumber;
+                this.currentSearch = movieTitle;
                 console.log("searching...");
                 console.log(result.data.Search);
             })
@@ -36,6 +40,9 @@ export const useMovieStore= defineStore('movies', {
             this.totalSearchResults = "0";
             this.searchResults = [];
             this.errors = null;
+        },
+        getNewPage(pageNumber) {
+            this.searchMovie(this.currentSearch, pageNumber);
         }
     },
     getters: {
@@ -44,6 +51,9 @@ export const useMovieStore= defineStore('movies', {
         },
         getTotalSearchResults() {
             return this.totalSearchResults;
+        },
+        getLoading() {
+            return this.loadingStatus === 'notLoading';
         }
     }
 })
