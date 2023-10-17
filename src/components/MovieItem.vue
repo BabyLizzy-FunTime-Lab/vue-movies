@@ -11,25 +11,25 @@ export default {
   props: {
     imgUrl: String,
     movieTitle: String,
-    releaseYear: String
+    releaseYear: String,
+    imDb: String
   },
   methods: {
-    checkPoster() {
-      console.log(this.imgUrl);
-      if (this.imgUrl === 'N/A') {
-        // If no poster is available we return a default img.
-        return this.getImgUrl('no-image.jpg');
-      } else {
-        return this.imgUrl;
-      }
+    showDetails(imDb) {
+      this.$router.push({
+        name: 'movieDetails',
+        params: {
+          imDb: imDb
+        }
+      })
     }
   }
 }
 </script>
 
 <template>
-  <li class="list-group-item movie--item">
-    <img :src="checkPoster()" class="moviePoster" alt="Poster of the movie">
+  <li class="list-group-item movie--item" @click="showDetails(imDb)">
+    <img :src="checkPoster(this.imgUrl)" class="moviePoster" alt="Poster of the movie">
     <div>
       <h2>{{movieTitle}}</h2>
       <h3>{{releaseYear}}</h3>

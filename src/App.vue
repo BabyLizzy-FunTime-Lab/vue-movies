@@ -10,6 +10,8 @@ import HeaderNav from "@/components/HeaderNav.vue";
   </main>
 </template>
 
-<style scoped>
-
+<style scoped lang="scss">
+  main {
+    max-width: 55em;
+  }
 </style>

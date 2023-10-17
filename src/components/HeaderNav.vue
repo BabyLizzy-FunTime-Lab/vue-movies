@@ -25,6 +25,7 @@ header {
   align-items: center;
   padding-top: 1em;
   padding-bottom: 2em;
+  max-width: 55em;
 }
 .logo {
   display: block;

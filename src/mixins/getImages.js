@@ -9,6 +9,15 @@ export default {
         getIconUrl(img) {
             console.log("Getting icon: " + img);
             return new URL('../assets/icons/' + img, import.meta.url).href;
-        }
+        },
+        checkPoster(imgUrl) {
+            console.log(imgUrl);
+            if (imgUrl === 'N/A') {
+                // If no poster is available we return a default img.
+                return this.getImgUrl('no-image.jpg');
+            } else {
+                return imgUrl;
+            }
+        },
     }
 }
