@@ -12,7 +12,10 @@ export default {
         },
         getIconUrl(img) {
             console.log("Getting icon: " + img);
+            // This url points to the assets folder.
             // let imgUrl = new URL('/src/assets/icons/' + img, import.meta.url).href;
+            // This url points to the public folder. The dist deploy dir does not contain the images in the
+            // assets folder, only the images in the public folder.
             let imgUrl = new URL('/images/' + img, import.meta.url).href;
             console.log(imgUrl);
             return imgUrl;
