@@ -1,7 +1,7 @@
 import {defineStore} from "pinia";
 import axios from "axios";
-const baseDataURL = 'http://www.omdbapi.com/?apikey=5fd91ecf&';
-const baseImgURL = 'http://img.omdbapi.com/?apikey=5fd91ecf&';
+const baseDataURL = 'https://www.omdbapi.com/?apikey=5fd91ecf&';
+const baseImgURL = 'https://img.omdbapi.com/?apikey=5fd91ecf&';
 
 export const useMovieStore= defineStore('movies', {
     state: () => {
