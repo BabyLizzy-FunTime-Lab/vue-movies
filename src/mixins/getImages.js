@@ -4,11 +4,13 @@ export default {
         // Check the third edition of the book for the correct way.
         getImgUrl(img) {
             console.log("Getting img: " + img);
-            return new URL('/assets/images/' + img, import.meta.url).href;
+            let imgUrl = new URL('/src/assets/images/' + img, import.meta.url).href;
+            console.log(imgUrl);
+            return imgUrl;
         },
         getIconUrl(img) {
             console.log("Getting icon: " + img);
-            return new URL('/assets/icons/' + img, import.meta.url).href;
+            return new URL('/src/assets/icons/' + img, import.meta.url).href;
         },
         checkPoster(imgUrl) {
             console.log(imgUrl);
