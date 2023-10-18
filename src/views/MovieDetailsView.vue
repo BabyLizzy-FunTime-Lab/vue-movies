@@ -52,6 +52,7 @@ export default {
     background-color: lightseagreen;
     border-radius: 1em;
     padding: 2em;
+    margin-bottom: 2em;
     .img--plot--actors {
       display: grid;
       grid-template-columns: 1fr 1.5fr;
@@ -88,6 +89,10 @@ export default {
     }
   }
   @media (max-width: 450px) {
+    .movie--details {
+      padding-left: .5em;
+      padding-right: .5em;
+    }
     .img--plot--actors {
       img {
         max-height: 25em;
