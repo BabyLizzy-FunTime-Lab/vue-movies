@@ -37,8 +37,10 @@ export default {
     <div class="wrapper search--controls">
       <input @keyup.enter="searchMovieDefault(searchTitle)" type="text"
              v-model="searchTitle" placeholder="Input movie name here">
-      <button @click="searchMovieDefault(searchTitle)" class="btn btn-success">Search movies</button>
-      <button @click="clearResults()" class="btn btn-danger">Clear</button>
+      <div class="search--controls__buttons">
+        <button @click="searchMovieDefault(searchTitle)" class="btn btn-success">Search movies</button>
+        <button @click="clearResults()" class="btn btn-danger">Clear</button>
+      </div>
     </div>
     <loading-indicator v-if="!store.getLoading"/>
     <error-message v-else-if="store.getError" :error="store.getError"/>
@@ -59,11 +61,26 @@ export default {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .search--controls {
   display: flex;
+  flex-wrap: wrap;
   column-gap: .5em;
+  row-gap: .5em;
   margin-bottom: 1em;
+  input {
+    width: 13em;
+  }
+  .search--controls__buttons {
+    display: flex;
+    column-gap: .5em;
+    width: 13em;
+  }
+}
+@media (max-width: 450px) {
+  .search--controls__buttons {
+    justify-content: space-between;
+  }
 }
 .movie--list {
   margin-top: 1em;
