@@ -12,7 +12,7 @@ export default {
         },
         getIconUrl(img) {
             console.log("Getting icon: " + img);
-            return new URL('/src/assets/icons/' + img, import.meta.url).href;
+            return new URL('/images/' + img, import.meta.url).href;
         },
         checkPoster(imgUrl) {
             console.log(imgUrl);
