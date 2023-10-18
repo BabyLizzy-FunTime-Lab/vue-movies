@@ -4,7 +4,9 @@ export default {
         // Check the third edition of the book for the correct way.
         getImgUrl(img) {
             console.log("Getting img: " + img);
-            let imgUrl = new URL('/src/assets/images/' + img, import.meta.url).href;
+            // let imgUrl = new URL('/src/assets/images/' + img, import.meta.url).href;
+            let imgUrl = new URL('/images/' + img, import.meta.url).href;
+
             console.log(imgUrl);
             return imgUrl;
         },
