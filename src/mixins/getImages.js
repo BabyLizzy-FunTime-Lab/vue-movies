@@ -12,9 +12,9 @@ export default {
         },
         getIconUrl(img) {
             console.log("Getting icon: " + img);
-            let imgUrl = new URL('/src/assets/icons/' + img, import.meta.url).href;
+            // let imgUrl = new URL('/src/assets/icons/' + img, import.meta.url).href;
+            let imgUrl = new URL('/images/' + img, import.meta.url).href;
             console.log(imgUrl);
-            // let imgUrl = new URL('/images/' + img, import.meta.url).href;
             return imgUrl;
         },
         checkPoster(imgUrl) {
