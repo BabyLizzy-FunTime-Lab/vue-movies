@@ -33,7 +33,7 @@ export default {
 
 <template>
   <div>
-    <h1>Pinia Movies</h1>
+    <h1>Cine Rasmussen</h1>
     <div class="wrapper search--controls">
       <input @keyup.enter="searchMovieDefault(searchTitle)" type="text"
              v-model="searchTitle" placeholder="Input movie name here">
